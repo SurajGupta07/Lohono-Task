@@ -16,8 +16,6 @@ export const Home = () => {
                 <div key={list.id}>
                     <h2>{list.title}</h2>
                     <div className={`${list.completed ? "completed" : ""} `}>{list.description}</div>
-                    <button>Tick</button>
-                    <button>Delete</button>
                 </div>
             ))}
         </div>

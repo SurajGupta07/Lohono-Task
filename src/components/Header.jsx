@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 export const Header = () => {
     return (
-        <div class="component-container" id="navbar">
-            <div class="nav-container">
-                <nav class="navigation container">
-                    <div class="nav-brand">Todo App</div>
-                    <ul class="non-bullet nav-pills">
-                        <li class="list-item-inline">
-                            <Link to="/" class="link">
+        <div className="component-container" id="navbar">
+            <div className="nav-container">
+                <nav className="navigation container">
+                    <div className="nav-brand">Todo App</div>
+                    <ul className="non-bullet nav-pills">
+                        <li className="list-item-inline">
+                            <Link to="/" className="link">
                                 Home
                             </Link>
                         </li>
-                        <li class="list-item-inline">
-                            <Link to="/list" class="link">
+                        <li className="list-item-inline">
+                            <Link to="/list" className="link">
                                 Todo
                             </Link>
                         </li>
