@@ -1,10 +1,59 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-image: linear-gradient(120deg, #b2bef8 0%, #a5b4fc 100%);
-  color: white;
+  color: black;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.navigation {
+  background-image: linear-gradient(120deg, #b2bef8 0%, #a5b4fc 100%);
+  color: black;
+  padding: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.list-item-inline {
+  display: inline;
+  padding: 0rem 0.5rem;
+}
+
+.navigation .link {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.link:hover{
+  background-color: #8095fc;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+
+.navigation .nav-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.non-bullet {
+  list-style: none;
+}
+
+.navigation .nav-pills {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.home-container{
+  margin: auto;
+  max-width: 600px;
 }
