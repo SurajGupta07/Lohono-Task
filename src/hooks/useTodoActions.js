@@ -28,12 +28,18 @@ export const useTodoActions = () => {
         }
     };
 
-    const deleteTodo = function (list) {
-        setData(data.filter((listItem) => listItem.id !== list.id)
-        );
+    const deleteTodo = async function (id) {
+        try {
+            const response = await axios.delete(`${BASE_API}/${id}`);
+            if(response.status === 200) {
+                setData(data.filter((listItem) => listItem.id !== id))
+            }
+        } catch (err) {
+            console.log(err);
+        }
     };
 
-    const completeHandler = function (list) {
+    const completeHandler = async function (list) {
         setData(
             data.map((item) => {
                 if (item.id === list.id) {
