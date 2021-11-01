@@ -5,7 +5,7 @@ import { useData } from "../contexts/data-context";
 
 export const useTodoActions = () => {
     const navigate = useNavigate();
-    const { description, title, setData } = useData();
+    const { description, title, setData, data } = useData();
 
     const taskClick = function (setTaskWindow, setShowTaskButton) {
         setTaskWindow(true);
@@ -28,9 +28,24 @@ export const useTodoActions = () => {
         }
     };
 
-    const deleteTodo = async function (list) {
-        setData((prevItem) => prevItem.filter((listItem) => listItem.id !== list.id));
+    const deleteTodo = function (list) {
+        setData(data.filter((listItem) => listItem.id !== list.id)
+        );
     };
 
-    return { closeHandler, taskClick, deleteTodo };
+    const completeHandler = function (list) {
+        setData(
+            data.map((item) => {
+                if (item.id === list.id) {
+                    return {
+                        ...item,
+                        completed: !item.completed,
+                    };
+                }
+                return item;
+            })
+        );
+    };
+
+    return { closeHandler, taskClick, deleteTodo, completeHandler };
 };

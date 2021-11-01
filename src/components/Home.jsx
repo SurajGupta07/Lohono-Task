@@ -5,12 +5,13 @@ import { useTodoActions } from "../hooks/useTodoActions";
 
 export const Home = () => {
     const { getData } = useApi();
-    const { deleteTodo } = useTodoActions();
+    const { deleteTodo, completeHandler } = useTodoActions();
     const { data } = useData();
 
     useEffect(() => {
         getData(); // eslint-disable-next-line
     }, []);
+
 
     return (
         <div className="home-container">
@@ -20,7 +21,7 @@ export const Home = () => {
                     <div className={`${list.completed ? "completed" : ""} `}>
                         {list.description}
                     </div>
-                    <button className="complete-btn">✔</button>
+                    <button className="complete-btn" onClick={() => completeHandler(list)}>✔</button>
                     <button
                         className="trash-btn"
                         onClick={() => deleteTodo(list)}
